@@ -5,6 +5,16 @@ require_relative 'app/models/admin'
 
 set :port, 1029
 
+load_balancer_url = ENV['LOAD_BALANCER_URL']
+
+configure do
+  allowed_hosts = [
+    "localhost", 
+    "tu-app.com/",             
+    /.*\.elb\.amazonaws\.com$/,
+    
+  ]
+
 get '/' do
   'Check Admin Service is running ...'
 end

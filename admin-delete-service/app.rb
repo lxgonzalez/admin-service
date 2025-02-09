@@ -4,7 +4,18 @@ require 'dotenv/load'
 require_relative 'app/models/admin'
 
 set :database, { adapter: 'mysql2', database: ENV['DATABASE'], host: ENV['DATASOURCE_URL'], username: ENV['DATASOURCE_USERNAME'], password: ENV['DATASOURCE_PASSWORD'], port: ENV['DATASOURCE_PORT'] }
+
 set :port, 1030
+
+load_balancer_url = ENV['LOAD_BALANCER_URL']
+
+configure do
+  allowed_hosts = [
+    "localhost", 
+    "tu-app.com/",             
+    /.*\.elb\.amazonaws\.com$/,
+    
+  ]
 
 get '/' do
   'Delete Admin Service is running ...'

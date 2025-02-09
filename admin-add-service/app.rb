@@ -7,6 +7,16 @@ set :database, { adapter: 'mysql2', database: ENV['DATABASE'], host: ENV['DATASO
 
 port 1028
 
+load_balancer_url = ENV['LOAD_BALANCER_URL']
+
+configure do
+  allowed_hosts = [
+    "localhost", 
+    "tu-app.com/",             
+    /.*\.elb\.amazonaws\.com$/,
+    
+  ]
+
 get '/' do
   status 200
   'Add Admin Service is running ...'
