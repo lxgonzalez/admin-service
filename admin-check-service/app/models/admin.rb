@@ -1,5 +1,3 @@
-models/ admin.rb
-
 require 'sinatra/activerecord'
 
 class Admin < ActiveRecord::Base
