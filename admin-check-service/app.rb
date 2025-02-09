@@ -15,9 +15,9 @@ configure do
     /.*\.elb\.amazonaws\.com$/, 
   ]
 
-set :protection, origin_whitelist: allowed_hosts
-set :host_authorization, { allow: allowed_hosts }
-end
+  set :protection, origin_whitelist: allowed_hosts
+  set :host_authorization, { allow: allowed_hosts }
+  end
 
 set :database, { adapter: 'mysql2', database: ENV['DATABASE'], host: ENV['DATASOURCE_URL'], username: ENV['DATASOURCE_USERNAME'], password: ENV['DATASOURCE_PASSWORD'], port: ENV['DATASOURCE_PORT'] }
 
