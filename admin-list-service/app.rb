@@ -6,11 +6,12 @@ require_relative 'app/models/admin'
 set :bind, '0.0.0.0'
 set :port, 1031
 
+load_balancer_url = ENV['LOAD_BALANCER_URL']
 
 configure do
   allowed_hosts = [
     "localhost", 
-    "http://load-balancer-admin-1589988311.us-east-1.elb.amazonaws.com:1031/",             
+    "tu-app.com/",             
     /.*\.elb\.amazonaws\.com$/,
     
   ]
