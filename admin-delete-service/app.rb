@@ -17,7 +17,6 @@ configure do
     
   ]
 
-# Configura Rack::Protection para permitir estos hosts
 set :protection, origin_whitelist: allowed_hosts
 set :host_authorization, { allow: allowed_hosts }
 end
