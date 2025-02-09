@@ -12,7 +12,7 @@ configure do
     "localhost", 
     "http://load-balancer-admin-1589988311.us-east-1.elb.amazonaws.com:1031/",             
     /.*\.elb\.amazonaws\.com$/,
-    "172.31.0.0/16" 
+    
   ]
 
   # Configura Rack::Protection para permitir estos hosts
