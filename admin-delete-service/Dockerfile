@@ -1,13 +1,16 @@
 FROM ruby:3.2
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY Gemfile Gemfile.lock ./
+COPY Gemfile* ./
+
+RUN gem install bundler
+
 RUN bundle install
 
 COPY . .
 
-EXPOSE 4000
+EXPOSE 1030
 
 CMD ["ruby", "app.rb"]
 
