@@ -51,5 +51,6 @@ jobs:
                        -e DATASOURCE_URL=${{secrets.DATASOURCE_URL}} \
                        -e DATASOURCE_PORT=${{secrets.DATASOURCE_PORT}} \
                        -e DATABASE=${{secrets.DATABASE}} \
+                       -e LOAD_BALANCER_URL=${{secrets.LOAD_BALANCER_URL}} \
                        -d --name ${{secrets.DOCKER_IMAGE_DELETE}} \
                        -p 1030:1030 ${{secrets.DOCKER_USERNAME}}/${{secrets.DOCKER_IMAGE_DELETE}}:latest
