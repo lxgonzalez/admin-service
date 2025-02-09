@@ -7,8 +7,7 @@ set :bind, '0.0.0.0'
 set :port, 1031
 
 configure do
-  set :protection, except: :http_origin
-  set :trusted_hosts, nil  # Permitir cualquier host
+  set :protection, except: :host_authorization
 end
 
 set :database, { adapter: 'mysql2', database: ENV['DATABASE'], host: ENV['DATASOURCE_URL'], username: ENV['DATASOURCE_USERNAME'], password: ENV['DATASOURCE_PASSWORD'], port: ENV['DATASOURCE_PORT'] }
