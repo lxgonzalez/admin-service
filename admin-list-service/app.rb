@@ -6,9 +6,7 @@ require_relative 'app/models/admin'
 set :bind, '0.0.0.0'
 set :port, 1031
 
-configure do
-  set :protection, except: :host_authorization
-end
+use Rack::Protection::HostAuthorization, allow_all_hosts: true
 
 set :database, { adapter: 'mysql2', database: ENV['DATABASE'], host: ENV['DATASOURCE_URL'], username: ENV['DATASOURCE_USERNAME'], password: ENV['DATASOURCE_PASSWORD'], port: ENV['DATASOURCE_PORT'] }
 
