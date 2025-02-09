@@ -4,10 +4,15 @@ require 'dotenv/load'
 require_relative 'app/models/admin'
 
 set :bind, '0.0.0.0'
-set :protection, except: :host_header
-set :trusted_hosts, nil
-set :database, { adapter: 'mysql2', database: ENV['DATABASE'], host: ENV['DATASOURCE_URL'], username: ENV['DATASOURCE_USERNAME'], password: ENV['DATASOURCE_PASSWORD'], port: ENV['DATASOURCE_PORT'] }
 set :port, 1031
+
+configure do
+  set :protection, except: :http_origin
+  set :trusted_hosts, nil  # Permitir cualquier host
+end
+
+set :database, { adapter: 'mysql2', database: ENV['DATABASE'], host: ENV['DATASOURCE_URL'], username: ENV['DATASOURCE_USERNAME'], password: ENV['DATASOURCE_PASSWORD'], port: ENV['DATASOURCE_PORT'] }
+
 
 get '/' do
   'List Admin Service is running ...'
