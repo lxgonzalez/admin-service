@@ -3,6 +3,7 @@ require 'sinatra/activerecord'
 require 'dotenv/load'
 require_relative 'app/models/admin'
 
+set :bind, '0.0.0.0'
 set :database, { adapter: 'mysql2', database: ENV['DATABASE'], host: ENV['DATASOURCE_URL'], username: ENV['DATASOURCE_USERNAME'], password: ENV['DATASOURCE_PASSWORD'], port: ENV['DATASOURCE_PORT'] }
 set :port, 1031
 
