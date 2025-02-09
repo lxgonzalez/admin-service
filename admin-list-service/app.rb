@@ -11,11 +11,11 @@ get '/' do
 end
 
 # Route to list all admins
-get '/admins' do
+get '/admin' do
   begin
-    admins = Admin.all
+    admin = Admin.all
     status 200
-    admins.to_json
+    admin.to_json
   rescue StandardError => e
     status 500
     { error: 'Internal server error', message: e.message }.to_json
