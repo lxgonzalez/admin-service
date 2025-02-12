@@ -54,3 +54,4 @@ delete '/admin/:admin_id' do
     { message: 'Error deleting the admin', error: e.message }.to_json
   end
 end
+
