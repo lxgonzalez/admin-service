@@ -38,7 +38,8 @@ delete '/admin/:admin_id' do
   end
 
   begin
-    admin = Admin.find_by(admin_id: admin_id)
+    admin = Admin.find_by(id: admin_id)
+
 
     if admin
       admin.destroy
