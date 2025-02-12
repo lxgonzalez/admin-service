@@ -72,8 +72,10 @@ curl --location --request POST 'http://localhost:1028/admin' \
   "email": "admin@example.com"
 }'
 ```
+---
 
-
+## 📽️ Evidence
+![image](https://github.com/user-attachments/assets/12b40f86-1191-4cd0-aa56-abbf8f114bfb)
 
 
 
